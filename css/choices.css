@@ -1,0 +1,223 @@
+
+
+
+.default-select__inner {
+  transition: background-color .3s, border-color .3s;
+}
+
+
+
+.default-select {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 30px;
+  font-weight: 400;
+font-size: 16px;
+line-height: 32px;
+  color: var(--color-light);
+  background-color: transparent;
+}
+
+
+
+.default-select:focus {
+  outline: none;
+
+}
+
+.default-select:last-child {
+  margin-bottom: 0;
+}
+
+.default-select.is-open {
+  overflow: visible;
+}
+
+.default-select.is-disabled .default-select__inner,
+.default-select.is-disabled .default-select__input {
+  background: rgba(255, 255, 255, 0.2);
+  cursor: not-allowed;
+  -webkit-user-select: none;
+          user-select: none;
+}
+
+.default-select.is-disabled .default-select__item {
+  cursor: not-allowed;
+}
+
+.default-select [hidden] {
+  display: none !important;
+}
+
+.default-select[data-type*=select-one] {
+  cursor: pointer;
+}
+
+.default-select[data-type*=select-one]::after {
+  content: "";
+  position: absolute;
+  z-index: 5;
+  top: 42%;
+  right: 16px;
+  width: 8px;
+  height: 8px;
+  border-color: var(--color-light);
+  border-right: 1px solid;
+  border-bottom: 1px solid;
+  transition: border-color .3s;
+  transform: rotate(45deg);
+  pointer-events: none;
+}
+
+.default-select[data-type*=select-one].is-open::after {
+  border-color: var(--color-active);
+  border-top: 1px solid;
+  border-right: 0;
+  border-bottom: 0;
+  border-left: 1px solid;
+  transition: border-color .3s;
+}
+
+.default-select__inner {
+  position: relative;
+  outline: none;
+  z-index: 2;
+  display: inline-block;
+  overflow: hidden;
+  padding: 2px 5px 4px 16px;
+  width: 100%;
+  font-size: 16px;
+  vertical-align: top;
+  border: 1px solid var(--color-light);
+  border-radius: 6px;
+  background-color:transparent;
+}
+.default-select:hover{
+  background: rgba(255, 255, 255, 0.2);
+}
+.default-select:focus-visible{
+
+background: rgba(255, 255, 255, 0.2);
+}
+
+.default-select__list--dropdown .default-select__placeholder {
+  display: none;
+}
+
+
+
+.is-open .default-select__inner {
+  border-radius: 6px;
+}
+
+.default-select__list {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+
+}
+
+.default-select__list--single {
+  display: inline-block;
+  width: 100%;
+}
+
+.default-select__list--single .default-select__item {
+  width: 100%;
+}
+
+.default-select__list--dropdown,
+.default-select__list[aria-expanded] {
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  visibility: hidden;
+  overflow: hidden;
+  width: 100%;
+  word-break: break-all;
+  border: 1px solid var(--color-light);
+  border-radius: 6px;
+  background-color: transparent;
+  will-change: visibility;
+  outline: none;
+}
+
+.is-active.default-select__list--dropdown,
+.is-active.default-select__list[aria-expanded] {
+  visibility: visible;
+}
+
+
+
+.default-select__list--dropdown .default-select__list,
+.default-select__list[aria-expanded] .default-select__list {
+  position: relative;
+  overflow: auto;
+
+  -webkit-overflow-scrolling: touch;
+  will-change: scroll-position;
+}
+
+.default-select__list--dropdown .default-select__item,
+.default-select__list[aria-expanded] .default-select__item {
+  position: relative;
+  padding: 3px 15px;
+  color:#999999;;
+}
+
+
+
+.default-select__list--dropdown .default-select__item--selectable.is-highlighted,
+.default-select__list[aria-expanded] .default-select__item--selectable.is-highlighted {
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--color-light);
+}
+
+.default-select__item {
+  cursor: default;
+}
+
+.default-select__item:not(:last-child){
+  border-bottom: 1px solid var(--color-light);
+}
+
+.default-select__item--selectable {
+  cursor: pointer;
+  color: var(--color-light);
+
+}
+
+.default-select__item--disabled {
+  cursor: not-allowed;
+  -webkit-user-select: none;
+          user-select: none;
+
+}
+
+.default-select__input {
+  display: inline-block;
+  margin-bottom: 5px;
+  padding: 4px 0 4px 2px;
+  max-width: 100%;
+  font-size: 14px;
+  vertical-align: baseline;
+  border: 0;
+  border-radius: 0;
+
+}
+
+.default-select__input:focus {
+  outline: 0;
+}
+
+.default-select__input::-webkit-search-decoration,
+.default-select__input::-webkit-search-results-decoration {
+  display: none;
+}
+
+.default-select__input::-ms-clear,
+.default-select__input::-ms-reveal {
+  display: none;
+  width: 0;
+  height: 0;
+}
